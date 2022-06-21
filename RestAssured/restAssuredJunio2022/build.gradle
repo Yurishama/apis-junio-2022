@@ -14,6 +14,8 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 
     testImplementation 'io.rest-assured:rest-assured:5.1.1'
+    testImplementation 'io.rest-assured:json-path:4.4.0'
+    testImplementation group: 'com.jayway.jsonpath', name: 'json-path', version: '2.4.0'
 }
 
 test {

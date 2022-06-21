@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="ejemplo_test_api" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-16T01:04:32" hostname="Saidas-Air.GBIC" time="3.456">
+<testsuite name="ejemplo_test_api" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-06-21T02:21:19" hostname="Saidas-MacBook-Air.local" time="0.528">
   <properties/>
-  <testcase name="api_covid_test()" classname="ejemplo_test_api" time="3.456"/>
+  <testcase name="api_covid_test()" classname="ejemplo_test_api" time="0.528"/>
   <system-out><![CDATA[Request method:	GET
 Request URI:	https://reqres.in/api/users
 Proxy:			<none>
@@ -67,6 +67,7 @@ Body:			<none>
         "text": "To keep ReqRes free, contributions towards server costs are appreciated!"
     }
 }
+Status code: 200
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
