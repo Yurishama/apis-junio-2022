@@ -4,16 +4,15 @@ import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
-//import com.jayway.jsonpath.JsonPath;
 import io.restassured.response.Response;
+import jdk.jfr.Name;
 import org.junit.jupiter.api.*;
-//import org.junit.FixMethodOrder;
-//import static java.util.concurrent.TimeUinit.MILLISECONDS;
 
 import java.util.Base64;
 
 import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.*;
+
 
 //@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -33,12 +32,12 @@ public class eComerce {
     static private String token2;
     static private String addressID;
 
-    @BeforeAll
-    public static void configurarVariables(){
-        Allure.addAttachment("Environment","QA");
-    }
-    //@BeforeEach
-    private String obtenerToken(){
+
+
+
+    @Name("Obtener Token")
+    private String obtener_Token(){
+
         RestAssured.baseURI = String.format("https://%s/nga/api/v1.1/private/accounts?lang=es",url_base);
 
         Response response=given().log().all()
@@ -82,13 +81,17 @@ public class eComerce {
 
         String body_response = response.getBody().asString();
         String headers_response = response.getHeaders().toString();
+        long time = response.getTime();
 
+        System.out.println("Time: " + time);
         System.out.println("Body Response: " + body_response);
         System.out.println("Heades: " + headers_response);
 
         assertEquals(200,response.getStatusCode());
         assertNotNull(body_response);
         assertTrue(body_response.contains("all_categories"));
+        assertTrue(time < 900);
+
     }
 
     @Test
@@ -113,6 +116,22 @@ public class eComerce {
         assertEquals(200,response.getStatusCode());
         assertNotNull(body_response);
         assertTrue(body_response.contains("access_token"));
+        //new
+        JsonPath jsonResponse = response.jsonPath();
+
+        System.out.println("AccessToken: "+ jsonResponse.get("access_token"));
+        access_token = jsonResponse.get("access_token");
+
+        assertEquals(email,jsonResponse.get("account.email"));
+        assertEquals("tag:scmcoord.com,2013:api", jsonResponse.get("token_type"));
+        //Validar que el contenido de datos del token
+        assertTrue(access_token.matches("[A-Za-z0-9-_]+"));
+        assertTrue(headers_response.contains("Content-Type"));
+
+        long time = response.getTime();
+        System.out.println("Time: " + time);
+        assertTrue(time <= 1900);
+
 
     }
 
@@ -141,25 +160,15 @@ public class eComerce {
         System.out.println("time response: " + response.getTime());
 
         assertEquals(200,response.getStatusCode());
-        // Validar el tiempo de respuesta
-        //assert
         assertNotNull(body_response);
         assertTrue(body_response.contains("access_token"));
 
-        //Obtener valores de variables
-
-        //access_token = JsonPath.read(body_response,"$.access_token");
-        //access_token = JsonPath.read(body_response, "$.access_token");
-        //System.out.println("Access token: " + access_token);
 
         JsonPath jsonResponse = response.jsonPath();
 
         System.out.println("AccessToken: "+ jsonResponse.get("access_token"));
         access_token = jsonResponse.get("access_token");
         System.out.println("Access token: " + access_token);
-
-        //System.out.println("account_id: " + JsonPath.read(body_response, "$.account.account_id"));
-        // System.out.println("uuid: " + JsonPath.read(body_response, "$.account.uuid"));
         System.out.println("Account id: "+ jsonResponse.get("account.account_id"));
         System.out.println("uuid: "+ jsonResponse.get("account.uuid"));
 
@@ -338,7 +347,7 @@ public class eComerce {
     @Test
     @Order(9)
     public void crear_anuncio(){
-        String tokenUp2 = obtenerToken();
+        String tokenUp2 = obtener_Token();
         System.out.println("Token 2 "+ tokenUp2);
 
         RestAssured.baseURI = String.format("https://%s/v2/accounts/%s/up",url_base,uuid);
