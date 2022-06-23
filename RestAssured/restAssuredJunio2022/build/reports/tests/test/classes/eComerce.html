@@ -23,7 +23,7 @@
 <tr>
 <td>
 <div class="infoBox" id="tests">
-<div class="counter">4</div>
+<div class="counter">9</div>
 <p>tests</p>
 </div>
 </td>
@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">9.119s</div>
+<div class="counter">12.345s</div>
 <p>duration</p>
 </div>
 </td>
@@ -78,23 +78,48 @@
 </tr>
 </thead>
 <tr>
+<td class="success">borrar_direccion()</td>
+<td class="success">0.394s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">crear_anuncio()</td>
+<td class="success">1.176s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">crear_direccion()</td>
+<td class="success">0.475s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">crear_usuario_nuevo()</td>
+<td class="success">0.856s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
 <td class="success">editar_info_usuario()</td>
-<td class="success">0.858s</td>
+<td class="success">1.005s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">obtener_Token_usando_header_authorization()</td>
-<td class="success">0.985s</td>
+<td class="success">1.163s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">obtener_categorias()</td>
-<td class="success">4.183s</td>
+<td class="success">3.585s</td>
 <td class="success">passed</td>
 </tr>
 <tr>
 <td class="success">obtener_token_usando_auth_emil_pass()</td>
-<td class="success">3.093s</td>
+<td class="success">2.917s</td>
+<td class="success">passed</td>
+</tr>
+<tr>
+<td class="success">update_telefono()</td>
+<td class="success">0.774s</td>
 <td class="success">passed</td>
 </tr>
 </table>
@@ -117,10 +142,10 @@ Body Response: {&quot;all_categories&quot;:{&quot;color&quot;:&quot;FFFFFF&quot;
 Heades: Server=nginx
 Content-Type=application/json; charset=utf-8
 Vary=Accept-Encoding
-Cache-Control=max-age=31536000
 X-SCM-API-Version=1.1
+Cache-Control=max-age=31536000
 ETag=W/&quot;454f075aee4dc3c414ec981431530f58&quot;
-Date=Mon, 20 Jun 2022 22:01:55 GMT
+Date=Tue, 21 Jun 2022 23:22:33 GMT
 X-Frame-Options=DENY
 Content-Encoding=gzip
 Via=1.1 google
@@ -139,9 +164,9 @@ Headers:		Authorization=Basic dGVzdDFfYWdlbnRlQG1haWxpbmF0b3IuY29tOjEyMzQ1Ng==
 Cookies:		&lt;none&gt;
 Multiparts:		&lt;none&gt;
 Body:			&lt;none&gt;
-Body Response: {&quot;access_token&quot;:&quot;mc1x8a2f5c106a0caf9d5541007629b9eec5c20a73ca_v2&quot;,&quot;account&quot;:{&quot;account_id&quot;:&quot;/private/accounts/11686178&quot;,&quot;can_publish&quot;:true,&quot;email&quot;:&quot;test1_agente@mailinator.com&quot;,&quot;email_verified&quot;:true,&quot;locations&quot;:[{&quot;code&quot;:&quot;8&quot;,&quot;key&quot;:&quot;region&quot;,&quot;label&quot;:&quot;Colima&quot;,&quot;locations&quot;:[{&quot;code&quot;:&quot;110&quot;,&quot;key&quot;:&quot;municipality&quot;,&quot;label&quot;:&quot;Tecomán&quot;}]}],&quot;name&quot;:&quot;Paloma Cabeza de Vaca&quot;,&quot;phone&quot;:&quot;5323034487&quot;,&quot;phone_hidden&quot;:false,&quot;professional&quot;:false,&quot;rfc&quot;:&quot;&quot;,&quot;uuid&quot;:&quot;d89b3d75-6e0f-49be-a5eb-81ad90835e68&quot;},&quot;ad_events&quot;:{&quot;24h&quot;:{&quot;calls&quot;:0,&quot;mails&quot;:0,&quot;phone_views&quot;:0,&quot;views&quot;:0},&quot;7d&quot;:{&quot;calls&quot;:0,&quot;mails&quot;:0,&quot;phone_views&quot;:0,&quot;views&quot;:0},&quot;total&quot;:{&quot;calls&quot;:0,&quot;mails&quot;:0,&quot;phone_views&quot;:0,&quot;views&quot;:0}},&quot;token_type&quot;:&quot;tag:scmcoord.com,2013:api&quot;}
+Body Response: {&quot;access_token&quot;:&quot;mc1xbae193991cfa342a586163deee31b68888b4e02c_v2&quot;,&quot;account&quot;:{&quot;account_id&quot;:&quot;/private/accounts/11686178&quot;,&quot;can_publish&quot;:true,&quot;email&quot;:&quot;test1_agente@mailinator.com&quot;,&quot;email_verified&quot;:true,&quot;locations&quot;:[],&quot;name&quot;:&quot;agente_ventas4647.0&quot;,&quot;phone&quot;:&quot;1041677217&quot;,&quot;phone_hidden&quot;:false,&quot;professional&quot;:false,&quot;rfc&quot;:&quot;&quot;,&quot;uuid&quot;:&quot;d89b3d75-6e0f-49be-a5eb-81ad90835e68&quot;},&quot;ad_events&quot;:{&quot;24h&quot;:{&quot;calls&quot;:0,&quot;mails&quot;:0,&quot;phone_views&quot;:0,&quot;views&quot;:0},&quot;7d&quot;:{&quot;calls&quot;:0,&quot;mails&quot;:0,&quot;phone_views&quot;:0,&quot;views&quot;:0},&quot;total&quot;:{&quot;calls&quot;:0,&quot;mails&quot;:0,&quot;phone_views&quot;:0,&quot;views&quot;:0}},&quot;token_type&quot;:&quot;tag:scmcoord.com,2013:api&quot;}
 Heades: Server=nginx
-Date=Tue, 21 Jun 2022 02:21:15 GMT
+Date=Wed, 22 Jun 2022 01:50:13 GMT
 Content-Type=application/json; charset=utf-8
 Vary=Accept-Encoding
 X-SCM-API-Version=1.1
@@ -164,28 +189,17 @@ Cookies:		&lt;none&gt;
 Multiparts:		&lt;none&gt;
 Body:			&lt;none&gt;
 {
-    &quot;access_token&quot;: &quot;mc1xcee93e52bd35bb8afe2b2887854a951087dd4c8b_v2&quot;,
+    &quot;access_token&quot;: &quot;mc1x27477ccb5e731742654ba7f2f4d9e1722de76523_v2&quot;,
     &quot;account&quot;: {
         &quot;account_id&quot;: &quot;/private/accounts/11686178&quot;,
         &quot;can_publish&quot;: true,
         &quot;email&quot;: &quot;test1_agente@mailinator.com&quot;,
         &quot;email_verified&quot;: true,
         &quot;locations&quot;: [
-            {
-                &quot;code&quot;: &quot;8&quot;,
-                &quot;key&quot;: &quot;region&quot;,
-                &quot;label&quot;: &quot;Colima&quot;,
-                &quot;locations&quot;: [
-                    {
-                        &quot;code&quot;: &quot;110&quot;,
-                        &quot;key&quot;: &quot;municipality&quot;,
-                        &quot;label&quot;: &quot;Tecomán&quot;
-                    }
-                ]
-            }
+            
         ],
-        &quot;name&quot;: &quot;Paloma Cabeza de Vaca&quot;,
-        &quot;phone&quot;: &quot;5323034487&quot;,
+        &quot;name&quot;: &quot;agente_ventas4647.0&quot;,
+        &quot;phone&quot;: &quot;1041677217&quot;,
         &quot;phone_hidden&quot;: false,
         &quot;professional&quot;: false,
         &quot;rfc&quot;: &quot;&quot;,
@@ -214,28 +228,17 @@ Body:			&lt;none&gt;
     &quot;token_type&quot;: &quot;tag:scmcoord.com,2013:api&quot;
 }
 Body Response: {
-    &quot;access_token&quot;: &quot;mc1xcee93e52bd35bb8afe2b2887854a951087dd4c8b_v2&quot;,
+    &quot;access_token&quot;: &quot;mc1x27477ccb5e731742654ba7f2f4d9e1722de76523_v2&quot;,
     &quot;account&quot;: {
         &quot;account_id&quot;: &quot;/private/accounts/11686178&quot;,
         &quot;can_publish&quot;: true,
         &quot;email&quot;: &quot;test1_agente@mailinator.com&quot;,
         &quot;email_verified&quot;: true,
         &quot;locations&quot;: [
-            {
-                &quot;code&quot;: &quot;8&quot;,
-                &quot;key&quot;: &quot;region&quot;,
-                &quot;label&quot;: &quot;Colima&quot;,
-                &quot;locations&quot;: [
-                    {
-                        &quot;code&quot;: &quot;110&quot;,
-                        &quot;key&quot;: &quot;municipality&quot;,
-                        &quot;label&quot;: &quot;Tecomán&quot;
-                    }
-                ]
-            }
+            
         ],
-        &quot;name&quot;: &quot;Paloma Cabeza de Vaca&quot;,
-        &quot;phone&quot;: &quot;5323034487&quot;,
+        &quot;name&quot;: &quot;agente_ventas4647.0&quot;,
+        &quot;phone&quot;: &quot;1041677217&quot;,
         &quot;phone_hidden&quot;: false,
         &quot;professional&quot;: false,
         &quot;rfc&quot;: &quot;&quot;,
@@ -264,7 +267,7 @@ Body Response: {
     &quot;token_type&quot;: &quot;tag:scmcoord.com,2013:api&quot;
 }
 Heades: Server=nginx
-Date=Tue, 21 Jun 2022 02:21:17 GMT
+Date=Wed, 22 Jun 2022 01:50:14 GMT
 Content-Type=application/json; charset=utf-8
 Vary=Accept-Encoding
 X-SCM-API-Version=1.1
@@ -274,9 +277,9 @@ Via=1.1 google
 Alt-Svc=h3=&quot;:443&quot;; ma=2592000,h3-29=&quot;:443&quot;; ma=2592000
 Transfer-Encoding=chunked
 status response: 200
-time response: 1563
-AccessToken: mc1xcee93e52bd35bb8afe2b2887854a951087dd4c8b_v2
-Access token: mc1xcee93e52bd35bb8afe2b2887854a951087dd4c8b_v2
+time response: 1451
+AccessToken: mc1x27477ccb5e731742654ba7f2f4d9e1722de76523_v2
+Access token: mc1x27477ccb5e731742654ba7f2f4d9e1722de76523_v2
 Account id: /private/accounts/11686178
 uuid: d89b3d75-6e0f-49be-a5eb-81ad90835e68
 Request method:	PATCH
@@ -286,7 +289,7 @@ Request params:	&lt;none&gt;
 Query params:	lang=es
 Form params:	&lt;none&gt;
 Path params:	&lt;none&gt;
-Headers:		Authorization=tag:scmcoord.com,2013:api mc1xcee93e52bd35bb8afe2b2887854a951087dd4c8b_v2
+Headers:		Authorization=tag:scmcoord.com,2013:api mc1x27477ccb5e731742654ba7f2f4d9e1722de76523_v2
 				Accept=*/*
 				Content-Type=application/json
 Cookies:		&lt;none&gt;
@@ -315,7 +318,104 @@ Body:
     }
 }
 Body Response: {&quot;account&quot;:{&quot;account_id&quot;:&quot;/private/accounts/11686178&quot;,&quot;can_publish&quot;:true,&quot;email&quot;:&quot;test1_agente@mailinator.com&quot;,&quot;email_verified&quot;:true,&quot;locations&quot;:[{&quot;code&quot;:&quot;8&quot;,&quot;key&quot;:&quot;region&quot;,&quot;label&quot;:&quot;Colima&quot;,&quot;locations&quot;:[{&quot;code&quot;:&quot;110&quot;,&quot;key&quot;:&quot;municipality&quot;,&quot;label&quot;:&quot;Tecomán&quot;}]}],&quot;name&quot;:&quot;Paloma Cabeza de Vaca&quot;,&quot;phone&quot;:&quot;5323034487&quot;,&quot;phone_hidden&quot;:false,&quot;professional&quot;:false,&quot;rfc&quot;:&quot;&quot;,&quot;uuid&quot;:&quot;d89b3d75-6e0f-49be-a5eb-81ad90835e68&quot;}}
-</pre>
+Request method:	POST
+Request URI:	https://webapi.segundamano.mx/nga/api/v1.1/private/accounts?lang=es
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	lang=es
+Form params:	&lt;none&gt;
+Path params:	&lt;none&gt;
+Headers:		Authorization=Basic YWdlbnRlX3ZlbnRhczQzNTUuMEBtYWlsaW5hdG9yLmNvbTo1NDUxNS44NDE0Nzc4Mjg4NjQ=
+				Accept=*/*
+				Content-Type=application/json
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:
+{
+    &quot;account&quot;: {
+        &quot;email&quot;: &quot;agente_ventas4355.0@mailinator.com&quot;
+    }
+}
+Body Response: {&quot;error&quot;:{&quot;code&quot;:&quot;ACCOUNT_VERIFICATION_REQUIRED&quot;}}
+Request method:	PATCH
+Request URI:	https://webapi.segundamano.mx/nga/api/v1/private/accounts/11686178?lang=es
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	lang=es
+Form params:	&lt;none&gt;
+Path params:	&lt;none&gt;
+Headers:		Accept=application/json, text/plain, */*
+				Authorization=tag:scmcoord.com,2013:api mc1x27477ccb5e731742654ba7f2f4d9e1722de76523_v2
+				Content-Type=application/json
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:
+{
+    &quot;account&quot;: {
+        &quot;name&quot;: &quot;agente_ventas4355.0@mailinator.com&quot;,
+        &quot;phone&quot;: &quot;1145621848&quot;,
+        &quot;professional&quot;: false
+    }
+}
+Body Response: {&quot;account&quot;:{&quot;account_id&quot;:&quot;/private/accounts/11686178&quot;,&quot;can_publish&quot;:true,&quot;email&quot;:&quot;test1_agente@mailinator.com&quot;,&quot;email_verified&quot;:true,&quot;locations&quot;:[],&quot;name&quot;:&quot;agente_ventas4355.0&quot;,&quot;phone&quot;:&quot;1145621848&quot;,&quot;phone_hidden&quot;:false,&quot;professional&quot;:false,&quot;rfc&quot;:&quot;&quot;,&quot;uuid&quot;:&quot;d89b3d75-6e0f-49be-a5eb-81ad90835e68&quot;}}
+Telefono: 1145621848
+Telefono request: 1145621848
+Request method:	POST
+Request URI:	https://webapi.segundamano.mx/addresses/v1/create
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	contact=agente_ventas4355.0@mailinator.com Lopez 
+				phone=1145621848
+				rfc=CAPL800101
+				zipCode=45999
+				exteriorInfo=Lopez Mateos 761283
+				region=11
+				municipality=292
+				area=7488
+				alias=Casa
+Path params:	&lt;none&gt;
+Headers:		Authorization=Basic ZDg5YjNkNzUtNmUwZi00OWJlLWE1ZWItODFhZDkwODM1ZTY4Om1jMXgyNzQ3N2NjYjVlNzMxNzQyNjU0YmE3ZjJmNGQ5ZTE3MjJkZTc2NTIzX3Yy
+				Accept=*/*
+				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:			&lt;none&gt;
+Body Response: {&quot;addressID&quot;:&quot;a961d1ce-f1c9-11ec-9b09-93648656cbfc&quot;}
+Address: a961d1ce-f1c9-11ec-9b09-93648656cbfc
+Request method:	DELETE
+Request URI:	https://webapi.segundamano.mx/addresses/v1/delete/a961d1ce-f1c9-11ec-9b09-93648656cbfc
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	&lt;none&gt;
+Form params:	&lt;none&gt;
+Path params:	&lt;none&gt;
+Headers:		Authorization=Basic ZDg5YjNkNzUtNmUwZi00OWJlLWE1ZWItODFhZDkwODM1ZTY4Om1jMXgyNzQ3N2NjYjVlNzMxNzQyNjU0YmE3ZjJmNGQ5ZTE3MjJkZTc2NTIzX3Yy
+				Accept=*/*
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:			&lt;none&gt;
+Body Response: {&quot;message&quot;:&quot;a961d1ce-f1c9-11ec-9b09-93648656cbfc deleted correctly&quot;}
+Request method:	POST
+Request URI:	https://webapi.segundamano.mx/nga/api/v1.1/private/accounts?lang=es
+Proxy:			&lt;none&gt;
+Request params:	&lt;none&gt;
+Query params:	lang=es
+Form params:	&lt;none&gt;
+Path params:	&lt;none&gt;
+Headers:		Authorization=Basic dGVzdDFfYWdlbnRlQG1haWxpbmF0b3IuY29tOjEyMzQ1Ng==
+				Accept=*/*
+				Content-Type=application/x-www-form-urlencoded; charset=ISO-8859-1
+Cookies:		&lt;none&gt;
+Multiparts:		&lt;none&gt;
+Body:			&lt;none&gt;
+Body Response: {&quot;access_token&quot;:&quot;mc1x5781a686b6e354821dfd6e48ca95ccdd2a1c88cd_v2&quot;,&quot;account&quot;:{&quot;account_id&quot;:&quot;/private/accounts/11686178&quot;,&quot;can_publish&quot;:true,&quot;email&quot;:&quot;test1_agente@mailinator.com&quot;,&quot;email_verified&quot;:true,&quot;locations&quot;:[],&quot;name&quot;:&quot;agente_ventas4355.0&quot;,&quot;phone&quot;:&quot;1145621848&quot;,&quot;phone_hidden&quot;:false,&quot;professional&quot;:false,&quot;rfc&quot;:&quot;&quot;,&quot;uuid&quot;:&quot;d89b3d75-6e0f-49be-a5eb-81ad90835e68&quot;},&quot;ad_events&quot;:{&quot;24h&quot;:{&quot;calls&quot;:0,&quot;mails&quot;:0,&quot;phone_views&quot;:0,&quot;views&quot;:0},&quot;7d&quot;:{&quot;calls&quot;:0,&quot;mails&quot;:0,&quot;phone_views&quot;:0,&quot;views&quot;:0},&quot;total&quot;:{&quot;calls&quot;:0,&quot;mails&quot;:0,&quot;phone_views&quot;:0,&quot;views&quot;:0}},&quot;token_type&quot;:&quot;tag:scmcoord.com,2013:api&quot;}
+AccessToken: mc1x5781a686b6e354821dfd6e48ca95ccdd2a1c88cd_v2
+Access token: mc1x5781a686b6e354821dfd6e48ca95ccdd2a1c88cd_v2
+Account id: /private/accounts/11686178
+uuid: d89b3d75-6e0f-49be-a5eb-81ad90835e68
+Token 2 ZDg5YjNkNzUtNmUwZi00OWJlLWE1ZWItODFhZDkwODM1ZTY4Om1jMXg1NzgxYTY4NmI2ZTM1NDgyMWRmZDZlNDhjYTk1Y2NkZDJhMWM4OGNkX3Yy
+Endpoint: https://webapi.segundamano.mx/v2/accounts/d89b3d75-6e0f-49be-a5eb-81ad90835e68/up</pre>
 </span>
 </div>
 </div>
@@ -326,7 +426,7 @@ Body Response: {&quot;account&quot;:{&quot;account_id&quot;:&quot;/private/accou
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.4</a> at Jun 20, 2022, 9:21:20 PM</p>
+<a href="http://www.gradle.org">Gradle 7.4</a> at Jun 21, 2022, 8:50:21 PM</p>
 </div>
 </div>
 </body>
