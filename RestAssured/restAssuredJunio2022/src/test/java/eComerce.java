@@ -1,9 +1,14 @@
+import io.qameta.allure.Allure;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 //import com.jayway.jsonpath.JsonPath;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.*;
 //import org.junit.FixMethodOrder;
+//import static java.util.concurrent.TimeUinit.MILLISECONDS;
 
 import java.util.Base64;
 
@@ -28,7 +33,10 @@ public class eComerce {
     static private String token2;
     static private String addressID;
 
-    //@BeforeAll
+    @BeforeAll
+    public static void configurarVariables(){
+        Allure.addAttachment("Environment","QA");
+    }
     //@BeforeEach
     private String obtenerToken(){
         RestAssured.baseURI = String.format("https://%s/nga/api/v1.1/private/accounts?lang=es",url_base);
@@ -61,12 +69,15 @@ public class eComerce {
 
     @Test
     @Order(1)
+    @DisplayName("Test case: Vaidar que se desplieguen todas las categoras")
+    @Severity(SeverityLevel.CRITICAL)
     public void obtener_categorias(){
         RestAssured.baseURI = String.format("https://%s/nga/api/v1.1/public/categories/filter",url_base);
 
         Response response=given()
                 .log().all()
                 .queryParam("lang","es")
+                .filter(new AllureRestAssured())
                 .get();
 
         String body_response = response.getBody().asString();
@@ -82,6 +93,8 @@ public class eComerce {
 
     @Test
     @Order(2)
+    @DisplayName("Test case: Vaidar que se desplieguen todas las categoras")
+    @Severity(SeverityLevel.BLOCKER)
     public void obtener_Token_usando_header_authorization(){
         RestAssured.baseURI = String.format("https://%s/nga/api/v1.1/private/accounts",url_base);
 
@@ -117,6 +130,10 @@ public class eComerce {
         String body_response = response.getBody().asString();
         String body_pretty = response.prettyPrint();
         String headers_response = response.getHeaders().toString();
+        //int  time = response.getTime();
+
+        //Allure.addAttachment("Tiempo de respuesta", response.getTime()));
+        Allure.addAttachment("Boddy pretty: ", body_pretty);
 
         System.out.println("Body Response: " + body_pretty);
         System.out.println("Heades: " + headers_response);
@@ -275,6 +292,7 @@ public class eComerce {
                 .formParam("municipality","292")
                 .formParam("area","7488")
                 .formParam("alias","Casa")
+                .filter(new AllureRestAssured())
                 .post();
 
 
@@ -327,7 +345,48 @@ public class eComerce {
 
         System.out.printf("Endpoint: %s",RestAssured.baseURI);
 
+        String body_request="{\"category\":\"8121\"," +
+                "\"subject\":\"Mudanzas y fletes a todo el pais\",\"body\":\"Si estas buscando una mudanza barata, esta es tu opción. Tenemos cobertura en todo el país\",\"region\":\"5\",\"municipality\":\"51\",\"area\":\"140000\",\"price\":\"1\",\"phone_hidden\":\"true\",\"show_phone\":\"false\",\"contact_phone\":\"9977886655\"}";
 
+        Response response = given()
+                .log().all()
+                .header("Authorization","Basic "+tokenUp2)
+                .contentType("application/json")
+                .accept("application/json, text/plain, */*")
+                .body(body_request)
+                .header("x-source","PHOENIX_DESKTOP")
+                .post();
+
+        String body_response = response.getBody().asString();
+
+        System.out.println("Body Response: " + body_response);
+
+        assertEquals(200,response.getStatusCode());
+        assertNotNull(body_response);
+
+    }
+
+    @Test
+    @Order(10)
+    public void ver_anuncios_pendientes(){
+        RestAssured.baseURI =  String.format("https://%s/nga/api/v1%s/klfst?status=pending&lim=20&o=0&query=&lang=es",url_base,account_id);
+
+        Response response = given()
+                .log().all()
+                .queryParam("status","pending")
+                .queryParam("lim","10")
+                .queryParam("o","0")
+                .queryParam("query","")
+                .queryParam("lang","es")
+                .header("Authorization","tag:scmcoord.com,2013:api "+ access_token)
+                .get();
+
+        String body_response = response.getBody().asString();
+
+        System.out.println("Body Response: " + body_response);
+
+        assertEquals(200,response.getStatusCode());
+        assertNotNull(body_response);
 
     }
 }
